@@ -1,0 +1,22 @@
+.home {
+  background-color: rgb(1, 1, 17);
+  padding-bottom: 20px;
+
+  .video_carousel_parent {
+    padding: 20px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .video_carousel_con_title {
+      font-size: 30px;
+      color: rgb(211, 207, 207);
+    }
+    .video_carousel_container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 20px;
+      background-color: rgb(1, 1, 17);
+    }
+  }
+}

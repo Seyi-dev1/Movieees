@@ -1,0 +1,108 @@
+.single {
+  width: 100vw;
+  min-height: 100vh;
+  margin-top: 100px;
+  padding: 20px 100px;
+  display: flex;
+  gap: 5rem;
+
+  .movie_jpg_con {
+    width: 27rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 2px solid rgba(30, 59, 64, 0.659);
+    padding-bottom: 10px;
+    border-radius: 20px;
+    .jpg {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .movie_btn {
+      padding: 13px 0px;
+      border-radius: 10px;
+      width: 90%;
+      align-self: center;
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+  }
+
+  .movie_information {
+    width: 70rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .movie_title {
+      font-size: 3rem;
+      color: #fff;
+      font-weight: 700;
+
+      .year {
+        color: rgb(107, 107, 107);
+        font-size: 1rem;
+        font-weight: 300;
+      }
+    }
+    .middle {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #9b071e;
+      .icon_con {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        .icon {
+          color: #dd1151;
+          padding: 15px;
+          border-radius: 50%;
+          border: 1px solid #dd1151;
+        }
+      }
+    }
+    .bottom {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 17px;
+
+      .rating {
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+        gap: 2px;
+        font-weight: 500;
+        color: #fff;
+        .star {
+          font-size: 17px;
+          color: gold;
+        }
+        .ten {
+          font-size: 13px;
+          color: rgb(238, 226, 226);
+        }
+      }
+      .release_year {
+        color: rgb(180, 180, 180);
+      }
+    }
+    .big_jpg {
+      width: 80%;
+    }
+    .overview {
+      color: rgb(137, 134, 134);
+      width: 80%;
+    }
+  }
+}
