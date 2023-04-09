@@ -32,6 +32,7 @@
       align-items: center;
       font-weight: 600;
       font-size: 1rem;
+      cursor: pointer;
     }
   }
 
@@ -63,6 +64,7 @@
         display: flex;
         gap: 5px;
         align-items: center;
+        cursor: pointer;
         .icon {
           color: #dd1151;
           padding: 15px;

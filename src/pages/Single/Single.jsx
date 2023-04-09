@@ -1,5 +1,8 @@
+import { Rating, Typography } from "@mui/material";
+import { FaStar } from "react-icons/fa";
 import React from "react";
-import { AiFillStar } from "react-icons/ai";
+import { useState } from "react";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { FaCreditCard, FaHeart, FaPlay, FaShareAlt } from "react-icons/fa";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useLocation } from "react-router-dom";
@@ -10,6 +13,7 @@ const Single = () => {
   const location = useLocation();
   const imagePath = "https://image.tmdb.org/t/p/original";
   console.log(location.state.data.moviedata);
+  const [value, setValue] = useState(0);
   return (
     <div className="single">
       <div className="movie_jpg_con">
@@ -63,6 +67,25 @@ const Single = () => {
           <span className="release_year">
             Rating: {location.state.data.moviedata.adult ? "18+" : "For all"}
           </span>
+          <Typography component="legend" className="release_year">
+            Rate this movie:
+          </Typography>
+          <Rating
+            name="simple-controlled"
+            value={value}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+            precision={0.5}
+            size="large"
+            emptyIcon={
+              <AiOutlineStar
+                style={{ opacity: 0.55 }}
+                color="#fff"
+                fontSize="inherit"
+              />
+            }
+          />
         </div>
         <LazyLoadImage
           src={imagePath + location.state.data.moviedata.backdrop_path}

@@ -22,10 +22,10 @@ const Carousel = ({ sort }) => {
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
-        // modules={[Navigation, A11y, Autoplay]}
+        modules={[Navigation, A11y, Autoplay]}
         navigation
         className="swiper"
-        // autoplay={{ delay: 6000, disableOnInteraction: false }}
+        autoplay={{ delay: 10000, disableOnInteraction: true }}
       >
         {carouselData.map((moviedata) => (
           <SwiperSlide key={moviedata.id} className="swiper_slide">
