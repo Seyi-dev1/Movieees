@@ -56,14 +56,6 @@ const Login = () => {
 
   return (
     <div className="login_container">
-      <div className="title_con">
-        <MdLocalMovies className="icon" />
-        <div className="title">
-          <span>BLOCK</span>
-          <span>BUSTER</span>
-          <h1>Films catalogue</h1>
-        </div>
-      </div>
       <div className="inputContainer">
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Email</label>

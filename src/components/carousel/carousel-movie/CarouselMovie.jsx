@@ -1,11 +1,14 @@
 import "./carousel_movie.scss";
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Placeholder from "../../movie/placeholder/Placeholder";
-import { FaHeart, FaPlay, FaShare, FaShareAlt } from "react-icons/fa";
+import { FaHeart, FaPlay, FaShareAlt } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 export const CarouselMovie = ({ ...moviedata }) => {
   const imagePath = "https://image.tmdb.org/t/p/original";
+  const [data, setData] = useState({ moviedata });
+  const navigate = useNavigate();
   return (
     <div className="carousel_movie">
       <div className="info_con">
@@ -44,7 +47,14 @@ export const CarouselMovie = ({ ...moviedata }) => {
             Release: {moviedata.release_date}
           </span>
         </div>
-        <span className="carousel_btn">MORE DETAIL</span>
+        <span
+          onClick={() => {
+            navigate(`/movies/${moviedata.title}`, { state: { data } });
+          }}
+          className="carousel_btn"
+        >
+          See More
+        </span>
       </div>
       <div className="backdrop_con">
         <LazyLoadImage

@@ -8,6 +8,7 @@ import Signup from "./pages/SignUp/Signup";
 import Account from "./pages/Account/Account";
 // import { useEffect } from "react";
 import "./app.scss";
+import AllMovies from "./pages/Allmovies/AllMovies";
 
 const App = () => {
   return (
@@ -20,8 +21,9 @@ const App = () => {
           <Route path="signup" element={<Signup />} />
           <Route path="My_Account" element={<Account />} />
           <Route path="movies">
-            <Route index element={<Movies />} />
+            <Route index element={<AllMovies />} />
             <Route path="/movies/:movieId" element={<Single />} />
+            <Route path="/movies/section/:sectionId" element={<Movies />} />
           </Route>
         </Route>
       </Routes>

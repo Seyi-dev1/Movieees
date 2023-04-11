@@ -15,7 +15,7 @@ const Movie = ({ ...moviedata }) => {
         src={imagePath + moviedata.poster_path}
         alt={moviedata.title}
         className="poster"
-        placeholder={<Placeholder spinner_size="4em" size="default" />}
+        placeholder={<Placeholder spinner_size="4em" size="placeholder" />}
       />
       <div className="info">
         <span className="title line-clamp-1">{moviedata.title}</span>

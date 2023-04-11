@@ -58,6 +58,7 @@
     border-radius: 60px;
     width: 100px;
     opacity: 0;
+    cursor: pointer;
   }
 
   &:hover {
@@ -74,6 +75,13 @@
     .movie_link {
       opacity: 1;
       transition: opacity 0.5s ease-in-out;
+      background-color: #f32474;
+    }
+  }
+
+  &:focus {
+    .movie_link {
+      background-color: #990a37;
     }
   }
 }

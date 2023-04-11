@@ -55,14 +55,6 @@ const Signup = () => {
 
   return (
     <div className="signup_container">
-      <div className="title_con">
-        <MdLocalMovies className="icon" />
-        <div className="title">
-          <span>BLOCK</span>
-          <span>BUSTER</span>
-          <h1>Films catalogue</h1>
-        </div>
-      </div>
       <div className="inputContainer">
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Email</label>

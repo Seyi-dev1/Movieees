@@ -1,6 +1,5 @@
 import { Rating, Typography } from "@mui/material";
-import { FaStar } from "react-icons/fa";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { FaCreditCard, FaHeart, FaPlay, FaShareAlt } from "react-icons/fa";
@@ -12,8 +11,10 @@ import "./single.scss";
 const Single = () => {
   const location = useLocation();
   const imagePath = "https://image.tmdb.org/t/p/original";
-  console.log(location.state.data.moviedata);
   const [value, setValue] = useState(0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="single">
       <div className="movie_jpg_con">
@@ -43,7 +44,7 @@ const Single = () => {
             <span className="icon">
               <FaHeart />
             </span>
-            Add to favourites
+            Add to Watchlist
           </span>
           <span className="icon_con">
             <span className="icon">
@@ -91,7 +92,7 @@ const Single = () => {
           src={imagePath + location.state.data.moviedata.backdrop_path}
           alt={location.state.data.moviedata.title}
           className="big_jpg"
-          placeholder={<Placeholder spinner_size="4em" size="default" />}
+          placeholder={<Placeholder spinner_size="4em" size="wide" />}
         />
 
         <span className="overview">
