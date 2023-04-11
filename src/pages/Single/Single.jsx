@@ -7,7 +7,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useLocation } from "react-router-dom";
 import Placeholder from "../../components/movie/placeholder/Placeholder";
 import "./single.scss";
-
+import Share from "../../components/share/Share";
 const Single = () => {
   const location = useLocation();
   const imagePath = "https://image.tmdb.org/t/p/original";
@@ -24,9 +24,13 @@ const Single = () => {
           className="jpg"
           placeholder={<Placeholder spinner_size="4em" size="default" />}
         />
-        <button className="movie_btn bg-red-600">
+        <a
+          className="movie_btn bg-red-600"
+          href={`https://www.youtube.com/results?search_query=${location.state.data.moviedata.title}`}
+          target="_blank"
+        >
           <FaPlay /> WATCH TRAILER
-        </button>
+        </a>
         <button className="movie_btn bg-yellow-400">
           <FaCreditCard /> BUY TICKET
         </button>
@@ -48,15 +52,9 @@ const Single = () => {
           </span>
           <span className="icon_con">
             <span className="icon">
-              <FaPlay />
-            </span>
-            Watch trailer
-          </span>
-          <span className="icon_con">
-            <span className="icon">
               <FaShareAlt />
             </span>
-            Share
+            <Share />
           </span>
         </div>
         <div className="bottom">

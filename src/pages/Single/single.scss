@@ -33,6 +33,12 @@
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
+      color: black;
+      transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      &:hover {
+        color: #fff;
+      }
     }
   }
 
@@ -60,12 +66,14 @@
       align-items: center;
       text-transform: uppercase;
       font-weight: 500;
-      color: #9b071e;
+      color: #dd1151;
       .icon_con {
         display: flex;
         gap: 5px;
         align-items: center;
         cursor: pointer;
+        font-size: 14px;
+        font-weight: 700;
         .icon {
           color: #dd1151;
           padding: 15px;
