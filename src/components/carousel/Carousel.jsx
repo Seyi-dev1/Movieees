@@ -6,17 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { CarouselMovie } from "./carousel-movie/CarouselMovie";
 
-const Carousel = ({ sort }) => {
-  const [carouselData, setCarouselData] = useState([]);
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${sort}?api_key=${
-        import.meta.env.VITE_API_KEY
-      }&language=en-US&page=1`,
-    )
-      .then((response) => response.json())
-      .then((apiData) => setCarouselData(apiData.results));
-  }, []);
+const Carousel = ({ data }) => {
   return (
     <div className="carousel_container">
       <Swiper
@@ -27,7 +17,7 @@ const Carousel = ({ sort }) => {
         className="swiper"
         autoplay={{ delay: 10000, disableOnInteraction: true }}
       >
-        {carouselData.map((moviedata) => (
+        {data.map((moviedata) => (
           <SwiperSlide key={moviedata.id} className="swiper_slide">
             <CarouselMovie {...moviedata} />
           </SwiperSlide>

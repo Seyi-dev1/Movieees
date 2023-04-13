@@ -3,10 +3,10 @@ import { createLogger } from "redux-logger";
 import userReducer from "./user/userReducer";
 import createSagaMiddleware from "@redux-saga/core";
 import rootSaga from "../sagas/rootSaga";
-import modalReducer from "./modal/modalReducer";
+import moviesReducer from "./moviesdata/moviesdataReducer";
 const combinedReducers = combineReducers({
   user: userReducer,
-  modal: modalReducer,
+  movies: moviesReducer,
 });
 
 const logger = createLogger();

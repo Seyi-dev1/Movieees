@@ -6,11 +6,17 @@ import Single from "./pages/Single/Single";
 import Login from "./pages/login/Login";
 import Signup from "./pages/SignUp/Signup";
 import Account from "./pages/Account/Account";
-// import { useEffect } from "react";
 import "./app.scss";
 import AllMovies from "./pages/Allmovies/AllMovies";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchMoviesStart } from "./redux/moviesdata/moviesdataReducer";
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchMoviesStart());
+  }, [dispatch]);
   return (
     <div className="app">
       <Navbar />

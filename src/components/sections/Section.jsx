@@ -1,23 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import Movie from "../movie/Movie";
 import "./section.scss";
 import { useNavigate } from "react-router-dom";
 
-const Section = ({ title, sort, slice, number }) => {
-  const [data, setData] = useState([]);
+const Section = ({ title, slice, number, data }) => {
   const [sectiontitle, setSectiontitle] = useState({ title });
-  const navigate = useNavigate();
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${sort}?api_key=${
-        import.meta.env.VITE_API_KEY
-      }&language=en-US`,
-    )
-      .then((response) => response.json())
-      .then((apiData) => setData(apiData.results));
-  }, [data]);
 
+  const navigate = useNavigate();
   return (
     <div className="section">
       <div className="section_title">
