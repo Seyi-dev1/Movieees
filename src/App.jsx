@@ -11,6 +11,7 @@ import AllMovies from "./pages/Allmovies/AllMovies";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchMoviesStart } from "./redux/moviesdata/moviesdataReducer";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const App = () => {
           </Route>
         </Route>
       </Routes>
+      <Footer />
     </div>
   );
 };
