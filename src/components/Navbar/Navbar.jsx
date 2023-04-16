@@ -24,10 +24,10 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="menu">
-        <div className="wishlist">
+        <Link to="/watchlist" className="wishlist">
           <BsFillHeartFill className="wishlist_icon" />{" "}
           <span className="wishlist_text">Watchlist</span>
-        </div>
+        </Link>
         {user ? (
           <Link to="/My_Account" className="login">
             <span className="login_text">My account</span>{" "}

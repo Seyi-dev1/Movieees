@@ -20,19 +20,17 @@ export const CarouselMovie = ({ ...moviedata }) => {
             <span className="icon">
               <FaHeart />
             </span>
-            Add to favourites
+            Add to watchlist
           </span>
           <span className="icon_con">
-            <span className="icon">
+            <a
+              className="icon"
+              href={`https://www.youtube.com/results?search_query=${moviedata.title}`}
+              target="_blank"
+            >
               <FaPlay />
-            </span>
-            Watch trailer
-          </span>
-          <span className="icon_con">
-            <span className="icon">
-              <FaShareAlt />
-            </span>
-            Share
+            </a>
+            WATCH TRAILER
           </span>
         </div>
         <div className="bottom">

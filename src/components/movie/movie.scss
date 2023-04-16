@@ -43,22 +43,33 @@
     }
   }
 
-  .movie_link {
+  .movie_links {
     position: absolute;
-    top: 50%;
+    top: 30%;
     right: 30%;
     font-size: 13px;
     justify-self: center;
     font-weight: 500;
     margin: 0 auto;
     color: #fff;
-    background-color: #dd1151;
-    padding: 10px;
+
     text-align: center;
-    border-radius: 60px;
+
     width: 100px;
     opacity: 0;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .movie_link {
+      background-color: #f32474;
+      cursor: pointer;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
   }
 
   &:hover {
@@ -72,16 +83,17 @@
       transition: color 0.5s ease-in-out;
     }
 
-    .movie_link {
+    .movie_links {
       opacity: 1;
       transition: opacity 0.5s ease-in-out;
-      background-color: #f32474;
     }
   }
 
   &:focus {
-    .movie_link {
-      background-color: #990a37;
+    .movie_links {
+      .movie_link {
+        background-color: #990a37;
+      }
     }
   }
 }

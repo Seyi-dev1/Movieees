@@ -1,6 +1,7 @@
 import { all, call } from "redux-saga/effects";
 import { userSagas } from "./userSagas";
 import { moviesSagas } from "./moviesSaga";
+import { wishlistSaga } from "./wishlistSaga";
 export default function* rootSaga() {
-  yield all([call(userSagas), call(moviesSagas)]);
+  yield all([call(userSagas), call(moviesSagas), call(wishlistSaga)]);
 }

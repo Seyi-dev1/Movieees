@@ -7,6 +7,7 @@
   height: 100%;
   gap: 10rem;
   width: 100%;
+  font-family: "Teko", sans-serif;
 
   .info_con {
     flex: 3;
@@ -38,17 +39,20 @@
       align-items: center;
       text-transform: uppercase;
       font-weight: 500;
-      color: #9b071e;
+      color: #ff1861;
 
       .icon_con {
         display: flex;
         gap: 5px;
         align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
         .icon {
-          color: #dd1151;
+          color: #ff1861;
           padding: 15px;
           border-radius: 50%;
-          border: 1px solid #dd1151;
+          border: 1px solid #ff1861;
         }
       }
     }

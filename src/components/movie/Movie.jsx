@@ -5,10 +5,14 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
 import "./movie.scss";
 import Placeholder from "./placeholder/Placeholder";
-const Movie = ({ ...moviedata }) => {
+import { useDispatch } from "react-redux";
+import { addMovie, removeMovie } from "../../redux/wishlist/wishlistReducer";
+import { FaEye } from "react-icons/fa";
+const Movie = ({ wishlist, ...moviedata }) => {
   const imagePath = "https://image.tmdb.org/t/p/original";
   const navigate = useNavigate();
   const [data, setData] = useState({ moviedata });
+  const dispatch = useDispatch();
   return (
     <div className="movie_container">
       <LazyLoadImage
@@ -24,15 +28,36 @@ const Movie = ({ ...moviedata }) => {
           {moviedata.vote_average}/10
         </span>
       </div>
-
-      <span
-        className="movie_link"
-        onClick={() => {
-          navigate(`/movies/${moviedata.title}`, { state: { data } });
-        }}
-      >
-        VIEW
-      </span>
+      <div className="movie_links">
+        {wishlist ? null : (
+          <span
+            className="movie_link"
+            onClick={() => {
+              dispatch(addMovie({ ...moviedata }));
+            }}
+          >
+            + Watchlist
+          </span>
+        )}
+        {wishlist ? (
+          <span
+            className="movie_link"
+            onClick={() => {
+              dispatch(removeMovie(moviedata.id));
+            }}
+          >
+            - Remove
+          </span>
+        ) : null}
+        <span
+          className="movie_link"
+          onClick={() => {
+            navigate(`/movies/${moviedata.title}`, { state: { data } });
+          }}
+        >
+          <FaEye /> View
+        </span>
+      </div>
     </div>
   );
 };

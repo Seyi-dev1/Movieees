@@ -2,7 +2,7 @@ import React from "react";
 import "./account.scss";
 const Account = () => {
   return (
-    <div>
+    <div className="account_page">
       <span>my Account</span>
     </div>
   );

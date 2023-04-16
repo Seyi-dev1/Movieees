@@ -9,7 +9,6 @@ import {
 } from "../../redux/user/userSelector";
 import { createSelector } from "reselect";
 import { useNavigate } from "react-router-dom";
-import { MdLocalMovies } from "react-icons/md";
 import { Link } from "react-router-dom";
 const Login = () => {
   const [details, setDetails] = useState({
@@ -86,7 +85,10 @@ const Login = () => {
         </form>
         {error && <h1 className="error">{error.message}</h1>}
         <Link to="/signup" className="signup_here">
-          create an Account here
+          create an Account here →
+        </Link>
+        <Link to="/" className="signup_here">
+          ← Back to Home
         </Link>
       </div>
     </div>

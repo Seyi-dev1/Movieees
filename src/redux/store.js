@@ -4,9 +4,11 @@ import userReducer from "./user/userReducer";
 import createSagaMiddleware from "@redux-saga/core";
 import rootSaga from "../sagas/rootSaga";
 import moviesReducer from "./moviesdata/moviesdataReducer";
+import wishlistReducer from "./wishlist/wishlistReducer";
 const combinedReducers = combineReducers({
   user: userReducer,
   movies: moviesReducer,
+  watchlist: wishlistReducer,
 });
 
 const logger = createLogger();

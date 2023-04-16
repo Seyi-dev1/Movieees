@@ -39,6 +39,9 @@
         &::placeholder {
           font-size: 13px;
         }
+        &:focus {
+          outline: none;
+        }
       }
       .buttonContainer {
         display: flex;
@@ -72,11 +75,14 @@
       font-size: 13px;
       color: black;
       text-align: center;
-      margin: 10px 0px;
-      text-decoration: underline;
+      padding: 10px 0px 0px 0px;
       display: flex;
       justify-content: center;
       align-content: center;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

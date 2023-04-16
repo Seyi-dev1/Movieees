@@ -26,9 +26,11 @@ const Section = ({ title, slice, number, data }) => {
         {slice
           ? data
               .slice(2, `${number}`)
-              .map((moviedata) => <Movie key={moviedata.id} {...moviedata} />)
+              .map((moviedata) => (
+                <Movie wishlist={false} key={moviedata.id} {...moviedata} />
+              ))
           : data.map((moviedata) => (
-              <Movie key={moviedata.id} {...moviedata} />
+              <Movie wishlist={false} key={moviedata.id} {...moviedata} />
             ))}
       </div>
     </div>

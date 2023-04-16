@@ -14,7 +14,7 @@ const Movies = () => {
       </span>
       <div className="movie_list">
         {location.state.data.map((moviedata) => (
-          <Movie key={moviedata.id} {...moviedata} />
+          <Movie wishlist={false} key={moviedata.id} {...moviedata} />
         ))}
       </div>
     </div>

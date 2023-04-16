@@ -56,12 +56,6 @@
         color: rgba(255, 255, 255, 0.692);
         font-weight: 200;
         font-size: 13px;
-
-        .no {
-          font-size: 16px;
-          color: #fff;
-          font-weight: 500;
-        }
       }
     }
     .second {
@@ -83,6 +77,35 @@
           font-weight: 200;
           color: #fff;
           width: 200px;
+        }
+        .subscribe_con {
+          width: 200px;
+          outline: none;
+          background-color: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.692);
+          padding: 5px 10px;
+          font-size: 13px;
+          font-weight: 200;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .subscribe {
+            outline: none;
+            background-color: transparent;
+            font-size: 13px;
+            font-weight: 200;
+            color: #fff;
+          }
+          .sub_icon {
+            color: #fff;
+            font-size: 13px;
+          }
+        }
+        .sub_btn {
+          color: #ff0051;
+          font-weight: 500;
+          font-size: 14px;
+          cursor: pointer;
         }
       }
     }

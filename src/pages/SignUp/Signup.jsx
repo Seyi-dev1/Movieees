@@ -96,7 +96,10 @@ const Signup = () => {
         </form>
         {error && <h1 className="error">{error.message}</h1>}
         <Link to="/login" className="login_here">
-          Go back to login
+          ← Go back to login
+        </Link>
+        <Link to="/" className="login_here">
+          ← Back to Home
         </Link>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { MdLocalMovies } from "react-icons/md";
+import { MdLocalMovies, MdMailOutline } from "react-icons/md";
 import "./footer.scss";
 const Footer = () => {
   return (
@@ -55,6 +55,15 @@ const Footer = () => {
             <span className="footer_link">
               Subscribe to our newsletter system now to get latest news from us.
             </span>
+            <div className="subscribe_con">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="subscribe"
+              />
+              <MdMailOutline className="sub_icon" />
+            </div>
+            <span className="sub_btn">Subscribe Now!{" >"}</span>
           </div>
         </div>
       </div>

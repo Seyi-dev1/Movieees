@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchMoviesStart } from "./redux/moviesdata/moviesdataReducer";
 import Footer from "./components/Footer/Footer";
+import Watchlist from "./pages/Watchlist/Watchlist";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="My_Account" element={<Account />} />
+          <Route path="watchlist" element={<Watchlist />} />
           <Route path="movies">
             <Route index element={<AllMovies />} />
             <Route path="/movies/:movieId" element={<Single />} />
