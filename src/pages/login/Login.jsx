@@ -11,6 +11,9 @@ import { createSelector } from "reselect";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 const Login = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [details, setDetails] = useState({
     email: "",
     password: "",

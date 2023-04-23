@@ -6,11 +6,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectWatchlistItems } from "../../redux/wishlist/wishlistSelector";
 import Movie from "../../components/movie/Movie";
 import { FaTrashAlt } from "react-icons/fa";
-import {
-  clearWatchlist,
-  removeMovie,
-} from "../../redux/wishlist/wishlistReducer";
+import { clearWatchlist } from "../../redux/wishlist/wishlistReducer";
 const Watchlist = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const selectAllWatchlist = createSelector(
     [selectWatchlistItems],
     (watchlist) => watchlist,

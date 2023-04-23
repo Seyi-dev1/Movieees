@@ -8,6 +8,9 @@ import { FaTrashAlt } from "react-icons/fa";
 import { clearHistory } from "../../redux/history/historyReducer";
 import { selectHistoryItems } from "../../redux/history/historySelector";
 const History = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const selectAllHistory = createSelector(
     [selectHistoryItems],
     (history) => history,
