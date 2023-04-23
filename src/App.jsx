@@ -13,6 +13,8 @@ import { useDispatch } from "react-redux";
 import { fetchMoviesStart } from "./redux/moviesdata/moviesdataReducer";
 import Footer from "./components/Footer/Footer";
 import Watchlist from "./pages/Watchlist/Watchlist";
+import Settings from "./pages/settings/Settings";
+import History from "./pages/History/History";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -27,8 +29,12 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
-          <Route path="My_Account" element={<Account />} />
-          <Route path="watchlist" element={<Watchlist />} />
+          <Route path="account">
+            <Route index element={<Account />} />
+            <Route path="/account/settings" element={<Settings />} />
+            <Route path="/account/history" element={<History />} />
+            <Route path="/account/watchlist" element={<Watchlist />} />
+          </Route>
           <Route path="movies">
             <Route index element={<AllMovies />} />
             <Route path="/movies/:movieId" element={<Single />} />

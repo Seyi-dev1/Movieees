@@ -1,0 +1,17 @@
+.share_con {
+  .share_btn {
+    color: #dd1151;
+    background-color: transparent;
+    font-weight: 700;
+
+    &:hover {
+      background-color: none;
+    }
+  }
+
+  #menu {
+    .share_menu {
+      background-color: rgb(5, 31, 73);
+    }
+  }
+}

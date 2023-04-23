@@ -5,10 +5,12 @@ import createSagaMiddleware from "@redux-saga/core";
 import rootSaga from "../sagas/rootSaga";
 import moviesReducer from "./moviesdata/moviesdataReducer";
 import wishlistReducer from "./wishlist/wishlistReducer";
+import historyReducer from "./history/historyReducer";
 const combinedReducers = combineReducers({
   user: userReducer,
   movies: moviesReducer,
   watchlist: wishlistReducer,
+  history: historyReducer,
 });
 
 const logger = createLogger();

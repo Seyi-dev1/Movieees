@@ -3,12 +3,24 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Placeholder from "../../movie/placeholder/Placeholder";
-import { FaHeart, FaPlay, FaShareAlt } from "react-icons/fa";
+import { FaHeart, FaPlay } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
+import { addToHistory } from "../../../redux/history/historyReducer";
+import { useDispatch } from "react-redux";
+
+import { selectCurrentUser } from "../../../redux/user/userSelector";
+import { useSelector } from "react-redux";
+import { createSelector } from "@reduxjs/toolkit";
 export const CarouselMovie = ({ ...moviedata }) => {
   const imagePath = "https://image.tmdb.org/t/p/original";
   const [data, setData] = useState({ moviedata });
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const userSelector = createSelector(
+    [selectCurrentUser],
+    (currentUser) => currentUser,
+  );
+  const user = useSelector((state) => userSelector(state));
   return (
     <div className="carousel_movie">
       <div className="info_con">
@@ -45,14 +57,27 @@ export const CarouselMovie = ({ ...moviedata }) => {
             Release: {moviedata.release_date}
           </span>
         </div>
-        <span
-          onClick={() => {
-            navigate(`/movies/${moviedata.title}`, { state: { data } });
-          }}
-          className="carousel_btn"
-        >
-          See More
-        </span>
+        {user ? (
+          <span
+            onClick={() => {
+              navigate(`/movies/${moviedata.title}`, { state: { data } });
+              dispatch(addToHistory());
+            }}
+            className="carousel_btn"
+          >
+            See More
+          </span>
+        ) : (
+          <span
+            onClick={() => {
+              alert("oops! login to continue your Journey!");
+              navigate("/login");
+            }}
+            className="carousel_btn"
+          >
+            See More
+          </span>
+        )}
       </div>
       <div className="backdrop_con">
         <LazyLoadImage

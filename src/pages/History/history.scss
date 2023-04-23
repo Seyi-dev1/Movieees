@@ -1,0 +1,52 @@
+.history_page {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .title_con {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      color: rgb(211, 211, 211);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-family: Nunito, "serif";
+    }
+
+    .clear_history {
+      color: rgb(211, 211, 211);
+      font-size: 1.5rem;
+      transition: 0.3s ease-in;
+      cursor: pointer;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  .movie_list {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    column-gap: 1rem;
+    row-gap: 0.6rem;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  .emptyhistory {
+    color: rgb(211, 211, 211);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: Nunito, "serif";
+    margin: auto auto;
+    transition: 1s ease-in-out;
+  }
+}
