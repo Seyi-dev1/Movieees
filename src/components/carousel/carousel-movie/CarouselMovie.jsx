@@ -84,7 +84,7 @@ export const CarouselMovie = ({ ...moviedata }) => {
           src={imagePath + moviedata.poster_path}
           alt={moviedata.title}
           className="poster"
-          placeholder={<Placeholder spinner_size="2rem" size="default" />}
+          placeholder={<Placeholder spinner_size="0.5rem" size="default" />}
         />
       </div>
     </div>

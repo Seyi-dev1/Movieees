@@ -31,3 +31,40 @@
     padding: 0;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100px;
+    padding: 20px 20px;
+    .section_title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      .sectionTitle {
+        font-size: 20px;
+        color: rgb(231, 231, 231);
+        width: 200px;
+      }
+
+      .view_all {
+        font-size: 10px;
+        cursor: pointer;
+        color: rgb(211, 207, 207);
+      }
+    }
+
+    .movie_list {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      column-gap: 0.4rem;
+      row-gap: 0.4rem;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
