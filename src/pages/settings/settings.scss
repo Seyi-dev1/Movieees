@@ -1,4 +1,157 @@
 .settings_page {
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+
+  display: grid;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
+
+  .settings_container {
+    width: 831px;
+    height: 725px;
+    padding: 60px;
+    height: fit-content;
+    margin: 4rem;
+    border-radius: 10px;
+    box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.1);
+
+    .title {
+      display: none;
+    }
+    .subtitle {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 17px;
+      /* identical to box height */
+
+      text-align: left;
+
+      color: #fff;
+      border-bottom: 1px solid #ff0051;
+    }
+
+    .security {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+
+      .security_action {
+        display: grid;
+        grid-template-columns: 5% 75% 20%;
+
+        .icon {
+          width: 20px;
+          height: 20px;
+          color: #ff0051;
+        }
+
+        .text {
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+
+          color: #fff;
+        }
+      }
+    }
+
+    .display_container {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+      .display_action {
+        display: grid;
+        grid-template-columns: 5% 75% 20%;
+
+        .icon {
+          width: 20px;
+          height: 20px;
+          color: #ff0051;
+        }
+
+        .text {
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .settings_page {
+    width: 100%;
+
+    display: grid;
+    justify-content: center;
+
+    .settings_container {
+      width: 343px;
+      height: 725px;
+      padding: 40px 20px;
+      .subtitle {
+        font-size: 11px;
+      }
+
+      .security {
+        .security_action {
+          grid-template-columns: 10% 75% 15%;
+
+          .icon {
+            width: 16px;
+            height: 16px;
+          }
+
+          .text {
+            font-size: 12px;
+          }
+        }
+
+        form {
+          label {
+            font-size: 12px;
+          }
+          input {
+            width: 250px;
+            height: 30px;
+          }
+
+          button {
+            width: 250px;
+            height: 30px;
+            font-size: 12px;
+          }
+        }
+      }
+
+      .display_container {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        .display_action {
+          display: grid;
+          grid-template-columns: 10% 75% 15%;
+
+          .icon {
+            width: 16px;
+            height: 16px;
+          }
+
+          .text {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
 }

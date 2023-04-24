@@ -9,16 +9,23 @@
   font-family: "Teko", sans-serif;
 
   .inputContainer {
+    border: 1px solid #ff0051;
     width: 300px;
     height: fit-content;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
     box-shadow: 15px 17px 15px -8px rgba(0, 0, 0, 0.1);
     padding: 25px;
+
+    .message {
+      font-weight: 500;
+      font-size: 15px;
+    }
     form {
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      margin-top: 1rem;
 
       label {
         color: #333;
@@ -58,6 +65,7 @@
           cursor: pointer;
           margin-top: 10px;
           border-radius: 5px;
+          font-size: 15px;
 
           &:hover {
             background-color: #c01048;

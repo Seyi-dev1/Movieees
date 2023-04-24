@@ -111,20 +111,20 @@ export default function CustomizedMenus() {
         onClose={handleClose}
       >
         <StyledMenuItem onClick={handleClose} disableRipple>
-          <Link className="dropdown_link" to="/account/watchlist">
+          <Link className="dropdown_link" to="/watchlist">
             <BsFillHeartFill className="wishlist_icon" />
             Watchlist
           </Link>
         </StyledMenuItem>
         <StyledMenuItem onClick={handleClose} disableRipple>
-          <Link className="dropdown_link" to="/account/history">
+          <Link className="dropdown_link" to="/history">
             <FaHistory className="wishlist_icon" />
             History
           </Link>
         </StyledMenuItem>
         <Divider sx={{ my: 0.5 }} />
         <StyledMenuItem onClick={handleClose} disableRipple>
-          <Link to="/account/settings" className="dropdown_link">
+          <Link to="/settings" className="dropdown_link">
             <MdSettings className="wishlist_icon" />
             Settings
           </Link>

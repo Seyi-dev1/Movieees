@@ -72,27 +72,15 @@ const Movie = ({ wishlist, history, ...moviedata }) => {
           </span>
         )}
 
-        {user ? (
-          <span
-            className="movie_link"
-            onClick={() => {
-              navigate(`/movies/${moviedata.title}`, { state: { data } });
-              dispatch(addToHistory({ ...moviedata }));
-            }}
-          >
-            <FaEye /> View
-          </span>
-        ) : (
-          <span
-            className="movie_link"
-            onClick={() => {
-              alert("oops! login to continue your Journey!");
-              navigate("/login");
-            }}
-          >
-            <FaEye /> View
-          </span>
-        )}
+        <span
+          className="movie_link"
+          onClick={() => {
+            navigate(`/movies/${moviedata.title}`, { state: { data } });
+            dispatch(addToHistory({ ...moviedata }));
+          }}
+        >
+          <FaEye /> View
+        </span>
       </div>
     </div>
   );

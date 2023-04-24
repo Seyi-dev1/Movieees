@@ -56,6 +56,9 @@ const Signup = () => {
   return (
     <div className="signup_container">
       <div className="inputContainer">
+        <span className="message">
+          Start your <br /> Block Buster journey...
+        </span>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Email</label>
           <input
