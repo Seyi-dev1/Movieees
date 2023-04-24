@@ -1,13 +1,13 @@
 import React from "react";
 import "./navbar.scss";
 import { MdLocalMovies } from "react-icons/md";
-import { BsFillHeartFill } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
 import { selectCurrentUser } from "../../redux/user/userSelector";
 import { createSelector } from "reselect";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CustomizedMenus from "./DropdownMenu";
+import CustomizedLoginMenu from "./LoginDropdown";
 const Navbar = () => {
   const userSelector = createSelector(
     [selectCurrentUser],
@@ -33,10 +33,7 @@ const Navbar = () => {
           // </Link>
           <CustomizedMenus />
         ) : (
-          <Link to="/login" className="login">
-            <span className="login_text">login</span>{" "}
-            <FaUser className="login_icon" />
-          </Link>
+          <CustomizedLoginMenu />
         )}
       </div>
     </div>

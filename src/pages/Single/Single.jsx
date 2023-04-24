@@ -24,16 +24,19 @@ const Single = () => {
           className="jpg"
           placeholder={<Placeholder spinner_size="4em" size="default" />}
         />
-        <a
-          className="movie_btn bg-red-600"
-          href={`https://www.youtube.com/results?search_query=${location.state.data.moviedata.title}`}
-          target="_blank"
-        >
-          <FaPlay /> WATCH TRAILER
-        </a>
-        <button className="movie_btn bg-yellow-400">
-          <FaCreditCard /> BUY TICKET
-        </button>
+
+        <div className="btns">
+          <a
+            className="movie_btn bg-red-600"
+            href={`https://www.youtube.com/results?search_query=${location.state.data.moviedata.title}`}
+            target="_blank"
+          >
+            <FaPlay /> WATCH TRAILER
+          </a>
+          <button className="movie_btn bg-yellow-400">
+            <FaCreditCard /> BUY TICKET
+          </button>
+        </div>
       </div>
 
       <div className="movie_information">

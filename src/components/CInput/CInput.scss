@@ -1,0 +1,28 @@
+.input_group {
+  display: grid;
+  gap: 0.8rem;
+  margin: 20px 0px;
+  .label {
+    color: #3a3a3a;
+    font-size: 13.333px;
+    line-height: 16px;
+    font-weight: 600;
+  }
+
+  .input {
+    width: 400px;
+    height: 40px;
+    background: #fff;
+    border: 0.833333px solid #afafaf;
+    border-radius: 6.66667px;
+    padding: 10px;
+    -webkit-user-select: text; /* Chrome, Opera, Safari */
+    -moz-user-select: text; /* Firefox 2+ */
+    -ms-user-select: text; /* IE 10+ */
+    user-select: text; /* Standard syntax */
+
+    &::placeholder {
+      padding: 10px;
+    }
+  }
+}
