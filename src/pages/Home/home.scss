@@ -20,3 +20,30 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .home {
+    background-color: rgb(1, 1, 17);
+    padding-bottom: 20px;
+
+    .video_carousel_parent {
+      padding: 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .video_carousel_con_title {
+        font-size: 20px;
+        color: rgb(211, 207, 207);
+        font-weight: 500;
+      }
+      .video_carousel_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+        background-color: rgb(1, 1, 17);
+      }
+    }
+  }
+}

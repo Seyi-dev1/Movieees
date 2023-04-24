@@ -25,3 +25,33 @@
     background-color: rgb(37, 28, 83);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .video_card {
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    gap: 7px;
+    padding: 5px;
+
+    .video_Poster {
+      flex: 2;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+    }
+
+    .video_name {
+      flex: 4;
+      font-size: 8px;
+      width: 100%;
+      color: rgb(255, 254, 254);
+      font-weight: 200;
+    }
+
+    &:focus,
+    :hover {
+      background-color: rgb(37, 28, 83);
+    }
+  }
+}

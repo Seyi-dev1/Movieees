@@ -55,3 +55,63 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .video_carousel {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+
+    .video {
+      background-color: rgb(16, 11, 40);
+      height: 100%;
+      width: 100%;
+
+      .youtube {
+        width: 100%;
+      }
+    }
+
+    .swiper {
+      background-color: rgb(16, 11, 40);
+      height: 100%;
+      width: 100%;
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        left: 50%;
+        transform: rotate(90deg);
+        transform-origin: left center;
+        color: rgb(195, 194, 194);
+        --swiper-navigation-size: 25px;
+      }
+
+      .swiper-button-prev {
+        top: 0;
+      }
+
+      .swiper-button-next {
+        top: auto;
+        bottom: 0px;
+      }
+      .active {
+        background-color: rgb(37, 28, 83);
+      }
+      .video_swiper_slide {
+        width: 100%;
+        height: 5rem;
+
+        &:focus,
+        :hover {
+          background-color: rgb(37, 28, 83);
+        }
+
+        cursor: pointer;
+      }
+    }
+  }
+}
