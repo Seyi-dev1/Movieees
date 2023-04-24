@@ -88,3 +88,39 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    height: 70px;
+
+    .menu {
+      .login {
+        display: flex;
+        align-items: center;
+        background-color: #000000;
+        padding: 5px 10px;
+        gap: 7px;
+        border-radius: 5px;
+        font-size: 0.75rem;
+        cursor: pointer;
+        width: fit-content;
+        justify-content: center;
+        transition: 200ms ease-in-out;
+
+        .login_text {
+          color: #ffffff;
+          font-weight: 300;
+        }
+        .login_icon {
+          color: #fff;
+        }
+        &:hover {
+          background-color: #3c3b3c;
+        }
+      }
+    }
+  }
+}
