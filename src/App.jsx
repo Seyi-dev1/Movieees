@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 import { fetchMoviesStart } from "./redux/moviesdata/moviesdataReducer";
 import Footer from "./components/Footer/Footer";
 import Watchlist from "./pages/Watchlist/Watchlist";
-import Settings from "./pages/settings/Settings";
+import Settings from "./pages/Settings/Settings";
 import History from "./pages/History/History";
 import { selectCurrentUser } from "./redux/user/userSelector";
 import { createSelector } from "reselect";
