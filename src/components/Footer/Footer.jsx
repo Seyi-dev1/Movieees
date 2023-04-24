@@ -22,38 +22,17 @@ const Footer = () => {
           </span>
         </div>
         <div className="second">
-          <span className="footer_title">Resources</span>
-          <div className="links">
-            <span className="footer_link">About</span>
-            <span className="footer_link">Blockbuster</span>
-            <span className="footer_link">Contact Us</span>
-            <span className="footer_link">Forums</span>
-            <span className="footer_link">Blog</span>
-            <span className="footer_link">Help Center</span>
-          </div>
-        </div>
-        <div className="second">
-          <span className="footer_title">Legal</span>
-          <div className="links">
-            <span className="footer_link">Terms of Use</span>
-            <span className="footer_link">Privacy Policy</span>
-            <span className="footer_link">Security</span>
-          </div>
-        </div>
-        <div className="second">
           <span className="footer_title">Account</span>
           <div className="links">
             <span className="footer_link">My Account</span>
             <span className="footer_link">Watchlist</span>
-            <span className="footer_link">Collections</span>
-            <span className="footer_link">User Guide</span>
           </div>
         </div>
         <div className="second">
           <span className="footer_title">Newsletter</span>
           <div className="links">
             <span className="footer_link">
-              Subscribe to our newsletter system now to get latest news from us.
+              Subscribe to our newsletter <br /> now to get latest news from us.
             </span>
             <div className="subscribe_con">
               <input
