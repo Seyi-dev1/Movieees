@@ -21,24 +21,32 @@
       object-fit: cover;
       border-radius: 10px;
     }
-
-    .movie_btn {
-      padding: 13px 0px;
-      border-radius: 10px;
-      width: 90%;
-      align-self: center;
+    .btns {
+      width: 100%;
       display: flex;
-      gap: 5px;
       justify-content: center;
+      flex-direction: column;
       align-items: center;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      color: black;
-      transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      gap: 10px;
+      padding: 10px;
+      .movie_btn {
+        padding: 13px 0px;
+        border-radius: 10px;
+        width: 90%;
+        align-self: center;
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        color: black;
+        transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-      &:hover {
-        color: #fff;
+        &:hover {
+          color: #fff;
+        }
       }
     }
   }
@@ -157,8 +165,8 @@
         align-self: center;
         padding: 10px;
         .movie_btn {
-          padding: 10px 5px;
-          border-radius: 10px;
+          padding: 10px 0px;
+          border-radius: 0px;
           align-self: center;
           display: flex;
           gap: 5px;
