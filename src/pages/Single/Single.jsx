@@ -25,7 +25,7 @@ const Single = () => {
           placeholder={<Placeholder spinner_size="4em" size="default" />}
         />
 
-        <div className="btns">
+        <div className="movie_btns">
           <a
             className="movie_btn bg-red-600"
             href={`https://www.youtube.com/results?search_query=${location.state.data.moviedata.title}`}
