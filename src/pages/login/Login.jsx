@@ -89,7 +89,7 @@ const Login = () => {
         </form>
         {error && <h1 className="error">{error.message}</h1>}
         <Link to="/signup" className="signup_here">
-          create an Account here →
+          create an account here →
         </Link>
         <Link to="/" className="signup_here">
           ← Back to Home

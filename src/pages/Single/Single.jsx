@@ -54,7 +54,7 @@ const Single = () => {
 
         <div className="movie_information">
           <span className="movie_title">
-            {location.state.data.moviedata.title}{" "}
+            {location.state.data.moviedata.title} <br />
             <span className="year">
               {location.state.data.moviedata.release_date}
             </span>
@@ -117,7 +117,7 @@ const Single = () => {
       <Section
         title="Movies you may like"
         slice={true}
-        number="17"
+        number="11"
         data={nowPlayingMovies}
       />
     </div>
