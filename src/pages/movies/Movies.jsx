@@ -10,7 +10,7 @@ const Movies = () => {
   return (
     <div className="movies">
       <span className="movies_title">
-        {location.state.sectiontitle.title}🔥
+        {location.state.sectiontitle.title || location.state.sectiontitle}🔥
       </span>
       <div className="movie_list">
         {location.state.data.map((moviedata) => (

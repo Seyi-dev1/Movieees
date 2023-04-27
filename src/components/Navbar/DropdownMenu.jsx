@@ -4,16 +4,33 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
-import { MdOutlineManageAccounts, MdSettings } from "react-icons/md";
+import {
+  MdMovieEdit,
+  MdOutlineManageAccounts,
+  MdSettings,
+} from "react-icons/md";
 import { grey } from "@mui/material/colors";
-import { Link } from "react-router-dom";
-import { BsFillHeartFill } from "react-icons/bs";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  BsFillBarChartLineFill,
+  BsFillCameraFill,
+  BsFillHeartFill,
+} from "react-icons/bs";
 import { FaHistory, FaSignOutAlt } from "react-icons/fa";
 // import { selectCurrentUser } from "../../redux/user/userSelector";
 // import { useSelector } from "react-redux";
 // import { createSelector } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import { startSignOut } from "../../redux/user/userReducer";
+import {
+  selectNowPlayingMovies,
+  selectOutInCinemaMovies,
+  selectPopularMovies,
+  selectTopRatedMovies,
+} from "../../redux/moviesdata/moviesdataSelector";
+import { createSelector } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
+import { AiFillFire } from "react-icons/ai";
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
@@ -87,6 +104,29 @@ export default function CustomizedMenus() {
   // );
   // const user = useSelector((state) => userSelector(state));
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const popularMoviesSelector = createSelector(
+    [selectPopularMovies],
+    (popularMovies) => popularMovies,
+  );
+  const topRatedMoviesSelector = createSelector(
+    [selectTopRatedMovies],
+    (topRatedMovies) => topRatedMovies,
+  );
+  const inCinemaMoviesSelector = createSelector(
+    [selectOutInCinemaMovies],
+    (upComingMovies) => upComingMovies,
+  );
+  const nowPlayingMoviesSelector = createSelector(
+    [selectNowPlayingMovies],
+    (nowPlaying) => nowPlaying,
+  );
+  const popularMovies = useSelector((state) => popularMoviesSelector(state));
+  const topRatedMovies = useSelector((state) => topRatedMoviesSelector(state));
+  const upComingMovies = useSelector((state) => inCinemaMoviesSelector(state));
+  const nowPlayingMovies = useSelector((state) =>
+    nowPlayingMoviesSelector(state),
+  );
   return (
     <div>
       <StyledButton
@@ -110,6 +150,61 @@ export default function CustomizedMenus() {
         open={open}
         onClose={handleClose}
       >
+        <StyledMenuItem onClick={handleClose} disableRipple>
+          <span
+            className="dropdown_link"
+            onClick={() => {
+              navigate("/movies/section/popular", {
+                state: { data: popularMovies, sectiontitle: "Popular movies" },
+              });
+            }}
+          >
+            <AiFillFire className="wishlist_icon" />
+            Popular
+          </span>
+        </StyledMenuItem>
+        <StyledMenuItem onClick={handleClose} disableRipple>
+          <span
+            className="dropdown_link"
+            onClick={() => {
+              navigate("/movies/section/Top Rated", {
+                state: { data: topRatedMovies, sectiontitle: "Top-rated" },
+              });
+            }}
+          >
+            <BsFillBarChartLineFill className="wishlist_icon" />
+            Top-rated
+          </span>
+        </StyledMenuItem>
+        <StyledMenuItem onClick={handleClose} disableRipple>
+          <span
+            className="dropdown_link"
+            onClick={() => {
+              navigate("/movies/section/Coming soon to cinemas", {
+                state: {
+                  data: upComingMovies,
+                  sectiontitle: "Coming soon to cinemas",
+                },
+              });
+            }}
+          >
+            <BsFillCameraFill className="wishlist_icon" />
+            Coming soon
+          </span>
+        </StyledMenuItem>
+        <StyledMenuItem onClick={handleClose} disableRipple>
+          <span
+            className="dropdown_link"
+            onClick={() => {
+              navigate("/movies/section/now playing", {
+                state: { data: nowPlayingMovies, sectiontitle: "Now Playing" },
+              });
+            }}
+          >
+            <MdMovieEdit className="wishlist_icon" />
+            Now playing
+          </span>
+        </StyledMenuItem>
         <StyledMenuItem onClick={handleClose} disableRipple>
           <Link className="dropdown_link" to="/watchlist">
             <BsFillHeartFill className="wishlist_icon" />
