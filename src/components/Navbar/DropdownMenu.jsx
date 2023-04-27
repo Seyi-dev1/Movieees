@@ -9,9 +9,9 @@ import { grey } from "@mui/material/colors";
 import { Link } from "react-router-dom";
 import { BsFillHeartFill } from "react-icons/bs";
 import { FaHistory, FaSignOutAlt } from "react-icons/fa";
-import { selectCurrentUser } from "../../redux/user/userSelector";
-import { useSelector } from "react-redux";
-import { createSelector } from "@reduxjs/toolkit";
+// import { selectCurrentUser } from "../../redux/user/userSelector";
+// import { useSelector } from "react-redux";
+// import { createSelector } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import { startSignOut } from "../../redux/user/userReducer";
 const StyledMenu = styled((props) => (
@@ -56,6 +56,7 @@ const StyledMenu = styled((props) => (
   },
 }));
 const StyledButton = styled(Button)`
+  padding: 10px;
   &:hover {
     background: rgba(4, 21, 60, 0.644);
   }
@@ -80,11 +81,11 @@ export default function CustomizedMenus() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const userSelector = createSelector(
-    [selectCurrentUser],
-    (currentUser) => currentUser,
-  );
-  const user = useSelector((state) => userSelector(state));
+  // const userSelector = createSelector(
+  //   [selectCurrentUser],
+  //   (currentUser) => currentUser,
+  // );
+  // const user = useSelector((state) => userSelector(state));
   const dispatch = useDispatch();
   return (
     <div>
@@ -96,10 +97,9 @@ export default function CustomizedMenus() {
         variant="contained"
         disableElevation
         onClick={handleClick}
-        endIcon={<MdOutlineManageAccounts />}
         sx={{ backgroundColor: "#000", textTransform: "lowercase" }}
       >
-        {user.username ? user.username : "My Account"}
+        <MdOutlineManageAccounts />
       </StyledButton>
       <StyledMenu
         id="demo-customized-menu"
