@@ -4,14 +4,10 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
-import {
-  MdEditDocument,
-  MdOutlineManageAccounts,
-  MdSettings,
-} from "react-icons/md";
+import { MdEditDocument } from "react-icons/md";
 import { grey } from "@mui/material/colors";
 import { Link, useNavigate } from "react-router-dom";
-import { FaSignInAlt } from "react-icons/fa";
+import { FaSignInAlt, FaUserCircle } from "react-icons/fa";
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
@@ -54,9 +50,12 @@ const StyledMenu = styled((props) => (
   },
 }));
 const StyledButton = styled(Button)`
-  &:hover {
-    background: rgba(4, 21, 60, 0.644);
-  }
+  padding: 5px;
+  font-size: 20px;
+  width: fit-content;
+  background: none;
+  padding: "0px 0px";
+  width: "20px";
 `;
 const StyledMenuItem = styled(MenuItem)`
   .dropdown_link {
@@ -90,10 +89,15 @@ export default function CustomizedLoginMenu() {
         variant="contained"
         disableElevation
         onClick={handleClick}
-        endIcon={<MdOutlineManageAccounts />}
-        sx={{ backgroundColor: "#000", textTransform: "lowercase" }}
+        sx={{
+          backgroundColor: "transparent",
+          textTransform: "lowercase",
+
+          padding: "0px 0px",
+          margin: 0,
+        }}
       >
-        My Account
+        <FaUserCircle />
       </StyledButton>
       <StyledMenu
         id="demo-customized-menu"

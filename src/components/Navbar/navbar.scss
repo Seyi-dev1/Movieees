@@ -45,46 +45,13 @@
   .menu {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 
-    .wishlist {
-      display: flex;
-      align-items: center;
-      background-color: #ff0051;
-      padding: 5px 10px;
-      gap: 7px;
-      border-radius: 100px;
-      font-size: 0.75rem;
-      cursor: pointer;
-      min-width: 100px;
-      transition: 200ms ease-in-out;
-      &:hover {
-        background-color: #dd1151;
-      }
-    }
-    .login {
-      display: flex;
-      align-items: center;
-      background-color: #000000;
-      padding: 5px 10px;
-      gap: 7px;
-      border-radius: 5px;
-      font-size: 0.75rem;
-      cursor: pointer;
+    .menu_btn {
+      padding: 0;
+      margin: 0;
       width: fit-content;
-      justify-content: center;
-      transition: 200ms ease-in-out;
-
-      .login_text {
-        color: #ffffff;
-        font-weight: 300;
-      }
-      .login_icon {
-        color: #fff;
-      }
-      &:hover {
-        background-color: #3c3b3c;
-      }
+      color: #fff;
     }
   }
 }
@@ -97,29 +64,10 @@
     height: 70px;
 
     .menu {
-      .login {
-        display: flex;
-        align-items: center;
-        background-color: #000000;
-        padding: 5px 10px;
-        gap: 7px;
-        border-radius: 5px;
-        font-size: 0.75rem;
-        cursor: pointer;
+      .menu_btn {
+        padding: 0;
+        margin: 0;
         width: fit-content;
-        justify-content: center;
-        transition: 200ms ease-in-out;
-
-        .login_text {
-          color: #ffffff;
-          font-weight: 300;
-        }
-        .login_icon {
-          color: #fff;
-        }
-        &:hover {
-          background-color: #3c3b3c;
-        }
       }
     }
   }

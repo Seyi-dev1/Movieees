@@ -4,11 +4,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
-import {
-  MdMovieEdit,
-  MdOutlineManageAccounts,
-  MdSettings,
-} from "react-icons/md";
+import { MdMovieEdit, MdSettings } from "react-icons/md";
 import { grey } from "@mui/material/colors";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -16,10 +12,8 @@ import {
   BsFillCameraFill,
   BsFillHeartFill,
 } from "react-icons/bs";
-import { FaHistory, FaSignOutAlt } from "react-icons/fa";
-// import { selectCurrentUser } from "../../redux/user/userSelector";
-// import { useSelector } from "react-redux";
-// import { createSelector } from "@reduxjs/toolkit";
+import { FaHistory, FaSignOutAlt, FaUserCircle } from "react-icons/fa";
+import { selectCurrentUser } from "../../redux/user/userSelector";
 import { useDispatch } from "react-redux";
 import { startSignOut } from "../../redux/user/userReducer";
 import {
@@ -73,10 +67,11 @@ const StyledMenu = styled((props) => (
   },
 }));
 const StyledButton = styled(Button)`
-  padding: 10px;
-  &:hover {
-    background: rgba(4, 21, 60, 0.644);
-  }
+  padding: 0;
+  font-size: 20px;
+  display: flex;
+  gap: 5px;
+  background: none;
 `;
 const StyledMenuItem = styled(MenuItem)`
   .dropdown_link {
@@ -98,11 +93,12 @@ export default function CustomizedMenus() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  // const userSelector = createSelector(
-  //   [selectCurrentUser],
-  //   (currentUser) => currentUser,
-  // );
-  // const user = useSelector((state) => userSelector(state));
+  const userSelector = createSelector(
+    [selectCurrentUser],
+    (currentUser) => currentUser,
+  );
+  const user = useSelector((state) => userSelector(state));
+  const { username } = user;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const popularMoviesSelector = createSelector(
@@ -137,9 +133,9 @@ export default function CustomizedMenus() {
         variant="contained"
         disableElevation
         onClick={handleClick}
-        sx={{ backgroundColor: "#000", textTransform: "lowercase" }}
+        sx={{ backgroundColor: "transparent", textTransform: "lowercase" }}
       >
-        <MdOutlineManageAccounts />
+        <FaUserCircle />
       </StyledButton>
       <StyledMenu
         id="demo-customized-menu"

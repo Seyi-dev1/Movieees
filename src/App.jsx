@@ -32,6 +32,7 @@ const App = () => {
   const RequireAuth = ({ children }) => {
     return user ? children : navigate("/login");
   };
+  console.log(user);
   return (
     <div className="app">
       <Navbar />

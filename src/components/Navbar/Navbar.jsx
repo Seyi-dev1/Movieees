@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CustomizedMenus from "./DropdownMenu";
 import CustomizedLoginMenu from "./LoginDropdown";
+import TemporaryDrawer from "./Drawer";
 const Navbar = () => {
   const userSelector = createSelector(
     [selectCurrentUser],
@@ -26,15 +27,7 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="menu">
-        {user ? (
-          // <Link to="/My_Account" className="login">
-          //   <span className="login_text">My account</span>{" "}
-          //   <MdOutlineManageAccounts className="login_icon" />
-          // </Link>
-          <CustomizedMenus />
-        ) : (
-          <CustomizedLoginMenu />
-        )}
+        <TemporaryDrawer anchor className="menu_btn" />
       </div>
     </div>
   );
