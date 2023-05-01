@@ -33,7 +33,7 @@ export function* getSnapshotFromUserAuth(userAuth, additionalData) {
       }),
     );
   } catch (error) {
-    yield put(SignInFailure(error));
+    yield put(SignInFailure(error.message));
   }
 }
 
@@ -46,7 +46,7 @@ export function* signInwithEmail({ payload }) {
     );
     yield getSnapshotFromUserAuth(user);
   } catch (error) {
-    yield put(SignInFailure(error));
+    yield put(SignInFailure(error.message));
   }
 }
 
@@ -60,7 +60,7 @@ export function* signUp({ payload }) {
     );
     yield put(signUpSuccess({ user, additionalData: { username } }));
   } catch (error) {
-    yield put(signUpFailure(error));
+    yield put(signUpFailure(error.message));
   }
 }
 

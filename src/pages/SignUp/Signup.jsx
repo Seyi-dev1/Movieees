@@ -10,7 +10,6 @@ import {
   selectError,
 } from "../../redux/user/userSelector";
 import { Link } from "react-router-dom";
-import { MdLocalMovies } from "react-icons/md";
 const Signup = () => {
   const [details, setDetails] = useState({
     email: "",
@@ -94,10 +93,23 @@ const Signup = () => {
             name="password"
           />
           <div className="buttonContainer">
-            <button type="submit">Sign up</button>
+            {isLoading ? (
+              <button className="loading" disabled={true}>
+                Login
+              </button>
+            ) : (
+              <button type="submit">Login</button>
+            )}
           </div>
         </form>
-        {error && <h1 className="error">{error.message}</h1>}
+        {error === "Firebase: Error (auth/email-already-in-use)." && (
+          <h1 className="error">Email already in use!</h1>
+        )}
+        {error === "Firebase: Error (auth/network-request-failed)." && (
+          <h1 className="error">
+            Check your internet connection and try agin!
+          </h1>
+        )}
         <Link to="/login" className="login_here">
           ← Go back to login
         </Link>

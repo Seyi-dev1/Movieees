@@ -71,6 +71,13 @@
             background-color: #c01048;
           }
         }
+        .loading {
+          background-color: #ff00516e;
+          color: rgba(255, 255, 255, 0.801);
+          &:hover {
+            cursor: not-allowed;
+          }
+        }
       }
     }
     .error {

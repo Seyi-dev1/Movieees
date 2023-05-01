@@ -10,6 +10,8 @@ import {
 import { createSelector } from "reselect";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { Button, ButtonToolbar } from "rsuite";
+import { Loader } from "rsuite";
 const Login = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -84,10 +86,21 @@ const Login = () => {
             name="password"
           />
           <div className="buttonContainer">
-            <button type="submit">Login</button>
+            {isLoading ? (
+              <button className="loading" disabled={true}>
+                Login
+              </button>
+            ) : (
+              <button type="submit">Login</button>
+            )}
           </div>
         </form>
-        {error && <h1 className="error">{error.message}</h1>}
+        {error === "Firebase: Error (auth/wrong-password)." && (
+          <h1 className="error">wrong password!</h1>
+        )}
+        {error === "Firebase: Error (auth/user-not-found)." && (
+          <h1 className="error">Wrong email or password</h1>
+        )}
         <Link to="/signup" className="signup_here">
           create an account here →
         </Link>
