@@ -10,6 +10,7 @@ import {
   selectError,
 } from "../../redux/user/userSelector";
 import { Link } from "react-router-dom";
+import { RiseLoader } from "react-spinners";
 const Signup = () => {
   const [details, setDetails] = useState({
     email: "",
@@ -94,9 +95,7 @@ const Signup = () => {
           />
           <div className="buttonContainer">
             {isLoading ? (
-              <button className="loading" disabled={true}>
-                Login
-              </button>
+              <RiseLoader color="#ff0051" size={10} />
             ) : (
               <button type="submit">Login</button>
             )}

@@ -15,8 +15,8 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    gap: 2rem;
+    padding: 0px 20px;
+    gap: 1.5rem;
     justify-content: center;
     .top {
       display: flex;
@@ -24,13 +24,13 @@
       gap: 0.5rem;
 
       .movie_title {
-        font-family: "Nunito", cursive;
+        font-family: "Bruno Ace", cursive;
         text-transform: uppercase;
         color: #fff;
         font-size: 4rem;
         font-weight: 700;
         font-style: italic;
-        line-height: 4rem;
+        line-height: 3.5rem;
       }
     }
     .middle {
@@ -88,7 +88,6 @@
       width: fit-content;
       padding: 13px;
       font-size: 1rem;
-      border-radius: 10px;
       cursor: pointer;
 
       &:hover {
@@ -139,7 +138,7 @@
         gap: 0.5rem;
 
         .movie_title {
-          font-family: "Nunito", cursive;
+          font-family: "Bruno Ace", cursive;
           text-transform: uppercase;
           color: #fff;
           font-size: 1rem;

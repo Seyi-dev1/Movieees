@@ -10,8 +10,8 @@ import {
 import { createSelector } from "reselect";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Button, ButtonToolbar } from "rsuite";
-import { Loader } from "rsuite";
+
+import { RiseLoader } from "react-spinners";
 const Login = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -87,9 +87,7 @@ const Login = () => {
           />
           <div className="buttonContainer">
             {isLoading ? (
-              <button className="loading" disabled={true}>
-                Login
-              </button>
+              <RiseLoader color="#ff0051" size={10} />
             ) : (
               <button type="submit">Login</button>
             )}
